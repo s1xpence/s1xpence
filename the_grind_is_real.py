@@ -1,5 +1,9 @@
 # reddit.py
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 options = webdriver.ChromeOptions()
 options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 options.add_argument('window-size=800x841')
@@ -21,10 +25,12 @@ answer_click = driver.find_element_by_xpath('//*[@class="answer-label"]').click(
 # this is to click the 'submit answer' button
 submit_click = driver.find_element_by_xpath('//*[@id="presentQuizForm-answerQuestionButton"]').click()
 
+driver.implicitly_wait(10)
+
+next_button = driver.find_element_by_xpath('//input[@id="presentQuizForm-nextQuestionButton"]').click()
+
+
 # this is to click on 'next question'
-next_quest = driver.find_element_by_xpath('//*[@id="presentQuizForm-nextQuestionButton"]').click()
-
-
 
 
 # //*[@id="presentQuizForm-button"]
