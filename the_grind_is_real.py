@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 options = webdriver.ChromeOptions()
 options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -19,13 +20,15 @@ password.send_keys('mhNF2PqdfjF3W')
 
 login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()
 
+
+
 # this is to select one of the answers
 answer_click = driver.find_element_by_xpath('//*[@class="answer-label"]').click()
 
 # this is to click the 'submit answer' button
 submit_click = driver.find_element_by_xpath('//*[@id="presentQuizForm-answerQuestionButton"]').click()
 
-driver.implicitly_wait(10)
+time.sleep(3)
 
 next_button = driver.find_element_by_xpath('//input[@id="presentQuizForm-nextQuestionButton"]').click()
 
