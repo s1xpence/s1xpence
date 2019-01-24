@@ -15,11 +15,13 @@ password.send_keys('mhNF2PqdfjF3W')
 
 login_click = driver.find_element_by_xpath('//*[@id="ajaxLogin"]').click()
 
-
+# this is to select one of the answers
 answer_click = driver.find_element_by_xpath('//*[@class="answer-label"]').click()
 
+# this is to click the 'submit answer' button
 submit_click = driver.find_element_by_xpath('//*[@id="presentQuizForm-answerQuestionButton"]').click()
 
+# this is to click on 'next question'
 next_quest = driver.find_element_by_xpath('//*[@id="presentQuizForm-nextQuestionButton"]').click()
 
 
